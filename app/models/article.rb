@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
 has_many :article_authors
 has_many :authors , :through=>:article_authors
 has_one :image ,:as=>:entity ,:dependent=>:destroy,:class_name=>"ImageProperty"
+has_and_belongs_to_many :issues
 
 #searchable do
 #  integer :id

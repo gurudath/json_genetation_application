@@ -3,6 +3,7 @@ AlphabetSort::Application.routes.draw do
   resources :pagenates
   resources :authors
   resources :articles
+  resources :issue
   match '/login_facebook' =>"social_network_login#login_facebook" 
   get '/login/:provider/callback', to: 'social_network_login#login'
   match 'search' => 'articles#search', :as => :search
