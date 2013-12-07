@@ -1,0 +1,18 @@
+<%= form_tag(:conteoller=>"login",:action=>"verify_login") %>
+  <div class="field">
+    <%='email_id' %><%= text_field_tag :email%>
+  </div>
+  <div class="field">
+    <%= "password" %><%= password_field_tag :password %>
+  </div>
+  <!-- class="field">
+    <%#= "description" %><%#= text_field_tag :reset_password%>
+  </div-->
+  <div class="actions">
+    <%= submit_tag('submit') %>
+  </div>
+
+  <div>
+  <%=link_to(image_tag('/images/fb_btton.jpg', size: "200x80", alt: "Facebook Login"),:controller=>"social_network_login",:action=>"login_facebook")%>
+  </div>
+
