@@ -10,7 +10,6 @@ class CreateArticlesAuthors < ActiveRecord::Migration
   end
 end
 
-
 class CreateArticlesAuthors < ActiveRecord::Migration
   def change
     create_table :articles_issues do |t|
@@ -32,6 +31,24 @@ class CreateArticlesAuthors < ActiveRecord::Migration
 
       t.timestamps
     end
+  end
+end
+
+class CreateArticlesAuthors < ActiveRecord::Migration
+  def change
+    create_table :articles_categories do |t|
+      t.integer :category_id
+      t.integer :article_id
+      t.integer :sequence_number
+
+      t.timestamps
+    end
+  end
+end
+
+class CreateArticlesAuthors < ActiveRecord::Migration
+  def change
+     drop_table :articles_categories
   end
 end
 

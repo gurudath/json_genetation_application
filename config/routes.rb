@@ -1,4 +1,5 @@
 AlphabetSort::Application.routes.draw do
+  match '/issue/issue_article' =>"issue#issue_article" 
   resources :people
   resources :pagenates
   resources :authors

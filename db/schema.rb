@@ -11,7 +11,78 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130912164840) do
+ActiveRecord::Schema.define(:version => 20131207150137) do
+
+  create_table "article_authors", :force => true do |t|
+    t.integer  "article_id"
+    t.integer  "author_id"
+    t.integer  "sequence_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "authors", :force => true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories_issues", :force => true do |t|
+    t.integer  "category_id"
+    t.integer  "issue_id"
+    t.integer  "sequence_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "image_properties", :force => true do |t|
+    t.integer  "image_id"
+    t.integer  "entity_id"
+    t.string   "entity_type"
+    t.string   "image_path"
+    t.integer  "thumblain_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "name"
+    t.integer  "entity_id"
+    t.string   "entity_type"
+    t.string   "caption"
+    t.text     "description"
+    t.string   "image_path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "issues", :force => true do |t|
+    t.string   "title"
+    t.date     "date"
+    t.text     "content"
+    t.text     "description"
+    t.string   "price"
+    t.string   "subscribed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pagenates", :force => true do |t|
     t.string   "first_name"
@@ -23,6 +94,18 @@ ActiveRecord::Schema.define(:version => 20130912164840) do
   create_table "people", :force => true do |t|
     t.string   "name"
     t.string   "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "content"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email_id"
+    t.string   "password"
+    t.date     "reset_max_date"
+    t.string   "login_name"
+    t.string   "reset_key"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
